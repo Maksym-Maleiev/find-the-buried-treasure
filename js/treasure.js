@@ -10,6 +10,8 @@ var target = {
   y: getRandomNumber(height)
 };
 
+var clicks = 0;
+
 $("#map").click(function (event) {
   
 });
