@@ -32,15 +32,17 @@ var getDistanceHint = function (distance) {
 };
 
 // Отримуємо рядок, що показує кіл-ть кліків
-var getClicksHint = function (clicks) {
-  if (clicks < 24) {
+var getClicksHint = function (click) {
+  if (click < 24) {
     return "You have clicks not more 24";
-  } else if (clicks < 15) {
+  } else if (click < 15) {
     return "You have clicks not more 15";
-  } else if (clicks < 10) {
+  } else if (click < 10) {
 return "You have clicks not more 10";
-  } else {
+  } else if (click < 5) {
     return "You have clicks not more 5";
+  } else {
+    return "You have not clicks";
   }
 };
 
