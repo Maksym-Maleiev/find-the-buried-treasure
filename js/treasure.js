@@ -9,3 +9,7 @@ var target = {
   x: getRandomNumber(width),
   y: getRandomNumber(height)
 };
+
+$("#map").click(function (event) {
+  
+});
