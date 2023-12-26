@@ -31,25 +31,11 @@ var getDistanceHint = function (distance) {
   }
 };
 
-// Отримуємо рядок, що показує кіл-ть кліків
-var getClicksHint = function (click) {
-  if (click < 24) {
-    return "You have clicks not more 24";
-  } else if (click < 15) {
-    return "You have clicks not more 15";
-  } else if (click < 10) {
-return "You have clicks not more 10";
-  } else if (click < 5) {
-    return "You have clicks not more 5";
-  } else {
-    return "You have not clicks";
-  }
-};
-
 // Налаштовуємо наші змінні параметри
 var width = 800;
 var height = 800;
 var clicks = 0;
+var clicksLimit = 25;
 
 // Створюємо випадкову локацію target
 var target = {
@@ -65,13 +51,13 @@ $("#map").click(function (event) {
 var distance = getDistance(event, target);
 
 // Конвертуємо відстань у підсказку
-var distanceHint = getDistanceHint(distance);
-  
+  var distanceHint = getDistanceHint(distance);
+    
 // Оновлюємо #distance-елемент новою підсказкою
   $("#distance").text(distanceHint);
   
   // Оновлюємо #clicks-елемент новою підсказкою
-  $("#clicks").text(getClicksHint);
+  $("#clicks-remaining").text("Залишилось кліків " + (clicksLimit - clicks) + "!");
 
 // Якщо клік було зроблено достатньо близько,
 // кажемо гравцеві, що він переміг
@@ -80,8 +66,9 @@ if (distance < 8) {
   }
  
   //Якщо кліків більше 25, то гру завершено
-  if (clicks > 24) {
+  if (clicks > clicksLimit) {
     alert("GAME OVER!");
+    return;
   }
 });
 
