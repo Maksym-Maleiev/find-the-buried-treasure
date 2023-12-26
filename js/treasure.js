@@ -24,14 +24,16 @@ var getDistanceHint = function (distance) {
     return "Cold!";
   } else if (distance < 320) {
     return "Really cold!";
-  } else {
+  } else if (distance < 560) {
+    return "Really really cold!";
+  } else {  
     return "Freezing!"
   }
 };
 
 // Налаштовуємо наші змінні параметри
-var width = 400;
-var height = 400;
+var width = 800;
+var height = 800;
 var clicks = 0;
 
 // Створюємо випадкову локацію target
