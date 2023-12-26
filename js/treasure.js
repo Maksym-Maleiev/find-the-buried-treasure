@@ -39,3 +39,11 @@ var getDistanceHint = function (distance) {
     return "Freezing!"
   }
 };
+
+var distance = getDistance(event, targrt);
+var distanceHint = getDistanceHint(distance);
+$("#distance").text(distanceHint);
+
+if (distance < 8) {
+  alert("Found the treasure in " + clicks + " clicks!");
+}
