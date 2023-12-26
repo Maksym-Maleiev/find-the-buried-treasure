@@ -31,6 +31,21 @@ var getDistanceHint = function (distance) {
   }
 };
 
+// Отримуємо рядок, що показує кіл-ть кліків
+var getClicksHint = function (clicks) {
+  if (clicks < 24) {
+    return "You have clicks not more 24";
+  } else if (clicks < 15) {
+    return "You have clicks not more 15";
+  } else if (clicks < 10) {
+return "You have clicks not more 10";
+  } else if (clicks < 5) {
+    return "You have clicks not more 5";
+  } else {
+    return "You have not clicks";
+  }
+};
+
 // Налаштовуємо наші змінні параметри
 var width = 800;
 var height = 800;
@@ -53,12 +68,20 @@ var distance = getDistance(event, target);
 var distanceHint = getDistanceHint(distance);
 
 // Оновлюємо #distance-елемент новою підсказкою
-$("#distance").text(distanceHint);
+  $("#distance").text(distanceHint);
+  
+  // Оновлюємо #clicks-елемент новою підсказкою
+  $("#clicks").text(getClicksHint);
 
 // Якщо клік було зроблено достатньо близько,
 // кажемо гравцеві, що він переміг
 if (distance < 8) {
   alert("Found the treasure in " + clicks + " clicks!");
-}
+  }
+ 
+  //Якщо кліків більше 25, то гру завершено
+  if (clicks > 24) {
+    alert("GAME OVER!");
+  }
 });
 
