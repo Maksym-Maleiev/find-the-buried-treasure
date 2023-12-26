@@ -13,5 +13,5 @@ var target = {
 var clicks = 0;
 
 $("#map").click(function (event) {
-  
+  clicks++;
 });
