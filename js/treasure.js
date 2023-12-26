@@ -39,10 +39,8 @@ var getClicksHint = function (clicks) {
     return "You have clicks not more 15";
   } else if (clicks < 10) {
 return "You have clicks not more 10";
-  } else if (clicks < 5) {
-    return "You have clicks not more 5";
   } else {
-    return "You have not clicks";
+    return "You have clicks not more 5";
   }
 };
 
