@@ -21,3 +21,21 @@ var getDistance = function (event, target) {
   var diffY = event.offsetY - target.y;
   return Math.sqrt((diffX * diffX) + (diffY * diffY));
 };
+
+var getDistanceHint = function (distance) {
+  if (distance < 10) {
+    return "Boiling hot!";
+  } else if (distance < 20) {
+    return "Really hot!";
+  } else if (distance < 40) {
+    return "Hot!";
+  } else if (distance < 80) {
+    return "Warm!";
+  } else if (distance < 160) {
+    return "Cold!";
+  } else if (distance < 320) {
+    return "Really cold!";
+  } else {
+    return "Freezing!"
+  }
+};
