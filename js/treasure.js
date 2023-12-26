@@ -43,9 +43,8 @@ var target = {
 // Додаємо маніпулятор кліків до елемента img
 $("#map").click(function (event) {
   clicks++;
-});
 
-// Отримуємо відстань між event і target
+  // Отримуємо відстань між event і target
 var distance = getDistance(event, target);
 
 // Конвертуємо відстань у підсказку
@@ -59,3 +58,5 @@ $("#distance").text(distanceHint);
 if (distance < 8) {
   alert("Found the treasure in " + clicks + " clicks!");
 }
+});
+
