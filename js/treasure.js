@@ -66,9 +66,6 @@ var distance = getDistance(event, target);
 
 // Конвертуємо відстань у підсказку
 var distanceHint = getDistanceHint(distance);
-
-  //Конвертуэмо кіл-ть кліків у підсказку
-  var clickHint = getClicksHint(click); 
   
 // Оновлюємо #distance-елемент новою підсказкою
   $("#distance").text(distanceHint);
